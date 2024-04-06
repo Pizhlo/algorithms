@@ -1,4 +1,4 @@
-name: Python package
+name: Run unit tests
 
 on: [push]
 
@@ -10,5 +10,6 @@ jobs:
     steps:
       - name: Run tests
         run: |
+          ls
           cd stepik/test
           python3 -m unittest
