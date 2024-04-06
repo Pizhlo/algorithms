@@ -10,7 +10,10 @@ class TestSum(unittest.TestCase):
 
         self.assertEqual(selection_sort(random_list), sorted_list)
 
-    def generate(self) -> list:
+    def generate(self) -> list[int]:
+        """
+        Генерирует тестовые данные.
+        """
         random_list = []
         for i in range(0, 100):
             n = random.randint(1, 1_000_000)
