@@ -9,7 +9,5 @@ jobs:
 
     steps:
       - name: Run tests
-        run: |
-          ls
-          cd stepik/test
-          python3 -m unittest
+        working-directory: ./stepik/test
+        run: python3 -m unittest
