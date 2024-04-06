@@ -1,5 +1,3 @@
-import sys
-
 def selection_sort(arr: list) -> list:
     """
     Сортировка выбором. 
