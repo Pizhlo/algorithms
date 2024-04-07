@@ -5,8 +5,23 @@
 # Функция должна искать значение в любом списке: как отсортированном, так и в неотсортированном.
 # Если значение не найдено, то функция должна вернуть -1.
 
-def linear_search(arr: list, target: int) -> int:
+def linear_search(arr: list[int], target: int) -> int:
+    """
+    Линейный поиск - проходит по всему массиву и возвращает индекс первого совпадения.
+    Если совпадения не найдены - возвращает -1.
+    """
     for i, val in enumerate(arr):
         if val == target:    
             return i
     return -1
+
+def linear_search_few_values(arr: list[int], target: int) -> list[int]:
+    """
+    Возвращает список индексов совпадений.
+    Если совпадения не найдены - возвращает -1.
+    """
+    res = list()
+    for i, val in enumerate(arr):
+        if val == target:   
+            res.append(i)
+    return res if len(res) > 0 else -1

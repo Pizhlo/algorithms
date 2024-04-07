@@ -1,4 +1,4 @@
-def selection_sort(arr: list) -> list:
+def selection_sort(arr: list[int]) -> list:
     """
     Сортировка выбором. 
     Алгоритм берет элемент, находит минимальный и меняет их местами.
