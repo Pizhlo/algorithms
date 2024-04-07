@@ -2,7 +2,7 @@ import unittest
 import random
 from selection_sort.selection_sort import selection_sort
 
-class TestSum(unittest.TestCase):
+class TestSelectionSort(unittest.TestCase):
 
     def test_selection_sort(self):
         random_list = self.generate()
