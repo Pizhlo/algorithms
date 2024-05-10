@@ -1,6 +1,6 @@
 import unittest
 import random
-from selection_sort.selection_sort import selection_sort
+from stepik.selection_sort.selection_sort import selection_sort
 
 class TestSelectionSort(unittest.TestCase):
 
