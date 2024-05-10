@@ -11,26 +11,47 @@ class List:
         self.top = Node()
         self.tail = None
 
-    def append_to_end(self, value):
-        """
-        Добавление нового элемента в конец связного списка.
-        Время работы O(1).
-        """
-
-        tail = self.tail
-        if tail is None:
-            tail = Node()
-            
-        tail.next_node = Node(value)
-
     def append_to_start(self, value):
         """
         Добавление нового элемента в начало связного списка.
         Время работы O(1).
         """
 
-        node = Node(value=value, next_node=self.top.next_node)
-        self.top.next_node = node
+        new_node = Node(value)
+        new_node.next_node = self.top.next_node
+        self.top.next_node = new_node
+        if self.tail is None:
+            self.tail = new_node
+
+    def append_to_end(self, value):
+        """
+        Добавление нового элемента в конец связного списка.
+        Время работы O(1).
+        """
+
+        new_node = Node(value)
+
+        if self.tail is not None:
+            self.tail.next_node = new_node
+            self.tail = new_node
+            return
+        
+        self.top.next_node = new_node
+        self.tail = new_node
+
+    def append_after_target(self, target, value):
+        """
+        Добавление элемента после некоторого значения.
+        """
+
+        current = self.top.next_node
+        node = Node(value)
+
+        while current is not None:
+            if current.value == target:
+                node.next_node = current.next_node
+                current.next_node = node
+            current = current.next_node
 
     def delete(self, value):
         """
@@ -71,5 +92,5 @@ l = List()
 l.append_to_start(1)
 l.append_to_end(2)
 l.append_to_end(3)
-
+l.append_after_target(1, 4)
 print(l)
