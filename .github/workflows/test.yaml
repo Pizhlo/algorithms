@@ -16,5 +16,5 @@ jobs:
           python-version: ${{ matrix.python-version }}
       - name: Test with unittest
         run: |
-          cd stepik
-          python -m unittest discover -s ./test  -p 'test_*.py'
+          cd test
+          python -m unittest discover -s .  -p 'test_*.py'
