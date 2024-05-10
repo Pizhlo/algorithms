@@ -1,5 +1,5 @@
 import unittest
-from linear_search.linear_search import linear_search, linear_search_few_values
+from stepik.linear_search.linear_search import linear_search, linear_search_few_values
 
 class TestLinearSearch(unittest.TestCase):
 
